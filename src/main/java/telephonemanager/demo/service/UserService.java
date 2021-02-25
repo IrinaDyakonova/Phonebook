@@ -14,7 +14,7 @@ public class UserService {
     private UserRepository userRepository;
 
 
-    public User getUser(Principal principal){
+    public User getUser(Principal principal) {
         String email = principal.getName();
         User userByEmail = userRepository.getUserByUserEmail(email);
         return userByEmail;

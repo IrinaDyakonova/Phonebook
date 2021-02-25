@@ -21,7 +21,7 @@ public class Contact {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @NotBlank(message = "Name can not be empty.")
-    @Size(min=3, max=20, message="Name must be between 3-20 characters.")
+    @Size(min = 3, max = 20, message = "Name must be between 3-20 characters.")
     private String name;
     private String numberPhone;
     @Email(regexp = "^[a-zA-Z0-9+.-]+@[a-zA-Z0-9+.-]+$")

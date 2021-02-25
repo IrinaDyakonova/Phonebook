@@ -14,15 +14,13 @@ public class ContactService {
     private ContactRepository contactRepository;
 
     public Page<Contact> findContactsByUser(int userId, Pageable pageable) {
-       return contactRepository.findContactsByUser(userId, pageable);
-
+        return contactRepository.findContactsByUser(userId, pageable);
     }
-
     public Contact findById(int contactId) {
         return contactRepository.findById(contactId).get();
     }
 
     public Contact saveContact(Contact contact) {
-        return  contactRepository.save(contact);
+        return contactRepository.save(contact);
     }
 }

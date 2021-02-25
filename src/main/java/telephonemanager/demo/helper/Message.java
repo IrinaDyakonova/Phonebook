@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public class Message {
 
     private String content;
+
     private String type;
 }

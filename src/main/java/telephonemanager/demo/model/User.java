@@ -24,12 +24,11 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "USER")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @NotBlank(message = "Name can not be empty.")
-    @Size(min=3, max=12, message="Name must be between 3-12 characters.")
+    @Size(min = 3, max = 12, message = "Name must be between 3-12 characters.")
     private String name;
     @Column(unique = true)
     @Email(regexp = "^[a-zA-Z0-9+.-]+@[a-zA-Z0-9+.-]+$")
@@ -38,18 +37,6 @@ public class User {
     private boolean enabled;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private List<Contact> contacts= new ArrayList<>();
+    private List<Contact> contacts = new ArrayList<>();
     private String role;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", contacts=" + contacts +
-                ", role='" + role + '\'' +
-                '}';
-    }
 }
