@@ -2,15 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="norm/base::layout(~{::section})">
 <head>
     <meta charset="UTF-8">
-    <title>Add Contact </title>
-
-
+    <title>Find Contact </title>
 </head>
 <body>
 <section>
     <div class="card text-center">
         <div class="card-body mr-3 ml-3">
-
             <h1 class="text-center">Find Contact from name or phonenumber</h1>
             <div class="container-fluid mt-1">
                 <div class="row">
@@ -24,11 +21,13 @@
                               class="mt-2"
                         >
                             <div class="input-group">
-                                <input type="text" id="firstName" name="name" placeholder="Enter your name" class="form-control"/>
+                                <input type="text" id="firstName" name="name" placeholder="Enter your name"
+                                       class="form-control"/>
                             </div>
 
                             <div class="input-group mt-3">
-                                <input type="number" id="phone" name="numberPhone" placeholder="Enter your phone no." class="form-control" min="10"/>
+                                <input type="number" id="phone" name="numberPhone" placeholder="Enter your phone no."
+                                       class="form-control" min="10"/>
                             </div>
 
                             <div class="container text-center">
