@@ -1,9 +1,9 @@
 body {
-    background: #e2e2e2 !important;
+    background: #c8c8c8  !important;
 }
 
 .bg-primary {
-    background: #009688 !important;
+    background: #53005b !important;
 }
 
 .banner {
@@ -53,13 +53,13 @@ body {
 }
 
 .sidebar a:hover {
-    background: #e2e2e2;
+    background: #c8c8c8;
 }
 
 .sidebar .divider {
     height: 0.5px;
     width: 100%;
-    background: #e2e2e2;
+    background: #c8c8c8;
     margin-top: 10px;
 }
 

@@ -11,7 +11,7 @@
     <div class="card text-center">
         <div class="card-body mr-3 ml-3">
 
-            <h1 class="text-center">Add Contact</h1>
+            <h1 class="text-center">Find Contact from name or phonenumber</h1>
             <div class="container-fluid mt-1">
                 <div class="row">
                     <div class="col-md-8 offset-md-2">
@@ -20,21 +20,19 @@
                               th:object="${contact}"
                               enctype="multipart/form-data"
                               method="POST"
-                              th:action="@{/user/process-contact}"
+                              th:action="@{/user/process-find}"
                               class="mt-2"
                         >
                             <div class="input-group">
-                                <input type="text" id="firstName" name="name" placeholder="Enter your name" class="form-control" required/>
+                                <input type="text" id="firstName" name="name" placeholder="Enter your name" class="form-control"/>
                             </div>
 
                             <div class="input-group mt-3">
-                                <input type="number" id="phone" name="numberPhone" placeholder="Enter your phone no." class="form-control" min="10" required/>
+                                <input type="number" id="phone" name="numberPhone" placeholder="Enter your phone no." class="form-control" min="10"/>
                             </div>
-                            <div class="input-group mt-3">
-                                <input type="email" id="email" name="email" placeholder="Enter your email address" class="form-control" required/>
-                            </div>
+
                             <div class="container text-center">
-                                <button class="btn btn-outline-success">Save Contact</button>
+                                <button class="btn btn-outline-success">Find Contact</button>
                             </div>
                         </form>
                     </div>

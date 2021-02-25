@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import telephonemanager.demo.helper.Message;
 import telephonemanager.demo.model.User;
-import telephonemanager.demo.repository.UserRepository;
+import telephonemanager.demo.service.UserService;
 
 @Controller
 public class HomeController {
@@ -22,13 +22,15 @@ public class HomeController {
     private BCryptPasswordEncoder passwordEncoder;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
     
     @RequestMapping("/")
    public String home(Model model) {
         model.addAttribute("title","Home - Phonebook");
        return "home";
    }
+
+
 
     @RequestMapping("/signin")
     public String mylogin(Model model) {
@@ -60,8 +62,7 @@ public class HomeController {
            user.setRole("ROLE_USER");
            user.setEnabled(true);
            user.setPassword(passwordEncoder.encode(user.getPassword()));
-           System.out.println(user);
-           User saveResult = userRepository.save(user);
+           User saveResult = userService.saveUser(user);
            model.addAttribute("user", new User());
            session.setAttribute("message", new Message("Successfully registered.", "alert-success"));
            return "signup";
@@ -69,7 +70,7 @@ public class HomeController {
        } catch (Exception e){
            e.printStackTrace();
            model.addAttribute("user", user);
-           session.setAttribute("message", new Message("Something went wrong. "+e.getMessage(), "alert-danger"));
+           session.setAttribute("message", new Message("Something went wrong. ", "alert-danger"));
            return "signup";
 
        }

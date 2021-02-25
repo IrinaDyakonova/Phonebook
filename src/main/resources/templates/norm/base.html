@@ -10,7 +10,7 @@
 </head>
 <nav class="fixed-top navbar navbar-expand-lg navbar-dark  bg-primary">
 
-    <a class="navbar-brand" href="#">Smart Contact Manager</a>
+    <a class="navbar-brand" href="#">Phone book</a>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -31,18 +31,15 @@
     </div>
 </nav>
 <div class="sidebar mt-2">
-
-    <span onclick="toggleSidebar()" class="crossBtn">&times;</span>
-
     <a href="#" th:href="@{/user/index}" class="item">Home</a>
     <a href="#"  th:href="@{/user/show-contacts/0}" class="item">View Contacts</a>
+    <a href="#"  th:href="@{/user/find-contact}" class="item">Find Contacts</a>
     <a href="#" th:href="@{/user/add-contact}" class="item">Add Contacts</a>
     <a href="#" th:href="@{/user/profile}" class="item">Your Profile</a>
     <a href="#" th:href="@{/logout}" class="item">Logout</a>
     <div class="divider"></div>
 </div>
 <div class="content mt-5">
-    <i onclick="toggleSidebar()" class="fas fa-bars m-3"></i>
     <div th:if="${session.message}" class="container ">
         <div th:classappend="${'alert-'+session.message.type}" class="alert alert-success text-center" role="alert">
             <span th:text="${session.message.content}"></span>

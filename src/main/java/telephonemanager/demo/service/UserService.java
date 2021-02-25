@@ -28,4 +28,9 @@ public class UserService {
     public User saveUser(User user) {
         return userRepository.save(user);
     }
+
+    public User deleteContact(Contact contact, Principal principal) {
+        this.getUser(principal).getContacts().remove(contact);
+        return getUser(principal);
+    }
 }

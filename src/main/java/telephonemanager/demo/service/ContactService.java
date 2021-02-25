@@ -17,4 +17,12 @@ public class ContactService {
        return contactRepository.findContactsByUser(userId, pageable);
 
     }
+
+    public Contact findById(int contactId) {
+        return contactRepository.findById(contactId).get();
+    }
+
+    public Contact saveContact(Contact contact) {
+        return  contactRepository.save(contact);
+    }
 }
