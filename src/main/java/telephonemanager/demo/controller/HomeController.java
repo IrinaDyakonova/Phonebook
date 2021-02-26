@@ -47,7 +47,9 @@ public class HomeController {
     public String registerUser(@Valid @ModelAttribute("user") User user, BindingResult result, @RequestParam(value = "agreement", defaultValue = "false") boolean agreement, Model model, HttpSession session) {
         try {
             if (!agreement) {
-                throw new Exception("You have not agreed the terms and conditions");
+             //   throw new Exception("You have not agreed the terms and conditions");
+                session.setAttribute("message", new Message("You have not agreed the terms and conditions", "alert-danger"));
+                return "signup";
             }
             if (result.hasErrors()) {
 

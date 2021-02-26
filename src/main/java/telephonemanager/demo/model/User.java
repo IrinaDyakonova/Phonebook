@@ -16,11 +16,13 @@ import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "USER")
 public class User {
@@ -39,4 +41,10 @@ public class User {
     @JoinColumn(name = "user_id")
     private List<Contact> contacts = new ArrayList<>();
     private String role;
+
+    public User(String name, String email, String password) {
+        this.name=name;
+        this.email=email;
+        this.password=password;
+    }
 }
