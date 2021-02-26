@@ -1,24 +1,76 @@
-body{
-    background: #e2e2e2!important;
+body {
+    background: #c8c8c8  !important;
 }
-.bg-primary{
-    background: #566D6B!important;
+
+.bg-primary {
+    background: #53005b !important;
 }
-.my-card{
+
+.banner {
+    width: 100%;
+    height: 91vh;
+    background: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8));
+    background-size: cover;
+    color: white;
+}
+
+.my-card {
     padding: 20px;
-    background: #F0F0F0;
+    background-color: white;
 }
 
 #login .container #login-row #login-column #login-box {
     margin-top: 120px;
-    max-width: 700px;
-    height: 420px;
+    max-width: 600px;
+    height: 380px;
     border: 1px solid #9C9C9C;
-    background-color: #EAEAEA;
+    background-color: white;
 }
 #login .container #login-row #login-column #login-box #login-form {
     padding: 20px;
 }
 #login .container #login-row #login-column #login-box #login-form #register-link {
-    margin-top: -85px;
+    margin-top: -31px;
+}
+
+
+.sidebar{
+    width: 18%;
+    background: white;
+    height: 100%;
+    position: fixed;
+    padding-top: 45px;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999;
+}
+
+.sidebar a {
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: gray;
+
+}
+
+.sidebar a:hover {
+    background: #c8c8c8;
+}
+
+.sidebar .divider {
+    height: 0.5px;
+    width: 100%;
+    background: #c8c8c8;
+    margin-top: 10px;
+}
+
+.sidebar .crossBtn{
+    position: absolute;
+    top: 0;
+    right: 35px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.content{
+    margin-left: 20%;
 }

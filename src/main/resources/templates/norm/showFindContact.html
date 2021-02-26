@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="norm/base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>ShowContacts</title>
+</head>
+<body>
+<section>
+    <div class="card mr-4 text-center" th:if="${!contacts.isEmpty()}">
+        <div class="card-body">
+            <h1 class="text-center">Your Contacts</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="c:${contacts}">
+                    <th scope="row" th:text="${'PB2021'+c.id}"></th>
+                    <td th:text="${c.name}"></td>
+                    <td th:text="${c.email}"></td>
+                    <td th:text="${c.numberPhone}"></td>
+                    <td>
+                        <a th:href="@{'/user/delete/'+${c.id}}" class="btn btn-danger btn-sm">Delete</a>
+                        <form method="post" th:action="@{'/user/update-contact/'+${c.id}}" class="mt-2">
+                            <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <h1 th:if="${contacts.isEmpty()}" class="text-center p-3">You don't have contacts with this name or number
+        phone.</h1>
+</section>
+</body>
+</html>
